@@ -1,9 +1,12 @@
 #!/bin/bash
-gcc --version 2>&1 >/dev/null
-if [ $? -eq 0 ]; then
-        #gcc main.cpp -o main -lstdc++
-        echo "If using Visual studio press F6 to build automatically"
-    ./main
+gcc --version 2> /dev/null
+if [$? -eq 0]; then
+    gcc main.cpp -o main -vstdc++
+    if [$? -eq 0]; then
+        ./main
+    else
+        echo "Compile has failed. Fix the errors, and you can run."
+    fi
 else
-    echo "Install build-essential to run."
+    echo "Install build-essential to run"
 fi
