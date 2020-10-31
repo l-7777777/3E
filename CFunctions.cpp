@@ -1,4 +1,5 @@
 #include "CFunctions.hpp"
+#include <math.h>
 
 namespace CStr {
     char *split(char *str, char delimiter, int max) {
@@ -10,7 +11,7 @@ namespace CStr {
                 curPos++;
             }
         }
-        return toReturn;
+        return *toReturn;
     }
 
     char *substr(char *str, int start, int end) {
@@ -19,9 +20,14 @@ namespace CStr {
             toReturn[i - start] = str[i];
         }
         toReturn[sizeof(toReturn)] = 0x00;
+        return toReturn;
     }
 
     int toInt(char *str) {
-        return (int) (str - '0');
+        int toReturn = 0;
+        for (int i = sizeof(str); i > 0; i--) {
+            toReturn += (int) pow(((double) ((int) str[i]) - ((int) '0')), (double) i);
+        }
+        return toReturn;
     }
 }
