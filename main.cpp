@@ -1,23 +1,9 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <streambuf>
-using namespace std;
+#include "info.hpp"
+#include "CFunctions.hpp"
+#ifdef OS_LINUX
+    
+#endif
 
-void Main() {
-    std::ifstream t("/mnt/c/Users/lysan/Donwloads/codeTags.html");
-    std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
-    printf("%s\n", str.c_str());
-    cout << "Method is working" << endl;
-    return;
-}
-
-
-int main() {
-    try {
-        Main();
-    } catch (exception e){
-        cout << e.what() << endl;
-    }
-    cout << "Main worked" << endl;
+int main(int argc, char *argv[]) {
+    CStr::split(argv[0], " ");
 }
