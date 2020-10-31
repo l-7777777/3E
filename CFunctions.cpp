@@ -10,7 +10,7 @@ namespace CStr {
                 curPos++;
             }
         }
-        return *toReturn;
+        return toReturn;
     }
 
     char *substr(char *str, int start, int end) {
@@ -22,6 +22,6 @@ namespace CStr {
     }
 
     int toInt(char *str) {
-        return str - '0';
+        return (int) (str - '0');
     }
 }
