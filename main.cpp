@@ -5,5 +5,5 @@
 #endif
 
 int main(int argc, char *argv[]) {
-    CStr::split(argv[0], " ");
+    *argv = CStr::split(argv[1], ' ', CStr::toInt(argv[0]));
 }

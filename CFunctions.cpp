@@ -20,4 +20,8 @@ namespace CStr {
         }
         toReturn[sizeof(toReturn)] = 0x00;
     }
+
+    int toInt(char *str) {
+        return str - '0';
+    }
 }
