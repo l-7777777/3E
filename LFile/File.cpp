@@ -54,5 +54,5 @@ int main(int argc, char **argv) {
     if (file.open(LFile::Read, 0) == 0) {
         cout << "Opening file succeeded" << '\n';
     }
-    file.read(10);
+    cout << file.read(10) << '\n';
 }
