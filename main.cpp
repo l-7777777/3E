@@ -5,5 +5,5 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     *argv = CStr::split(argv[0], ' ');
-    cout << argv[1] << '\n';
+    cout << argv[1] << '\a' << '\n';
 }
