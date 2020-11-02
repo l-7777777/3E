@@ -7,7 +7,7 @@ namespace CStr {
         for (int i = 0; i < sizeof(str); i++) {
             int curPos = 0;
             if (str[i] == delimiter) {
-                toReturn[curPos] = substr(str, 0, i);
+                toReturn[curPos] = substr(str, 0, i - 1);
                 curPos++;
             }
         }
